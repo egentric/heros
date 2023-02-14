@@ -29,33 +29,46 @@
 
                             <div class="row">
 
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <div class="form-group mb-4">
                                         <label>Race</label>
                                         <input type="text" name="race" class="form-control">
                                     </div>
                                 </div>
 
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
 
                                     <fieldset>
                                         <label>Genre:</label>
 
                                         <div>
                                             <input type="radio" id="masculin" name="gender" value="masculin" checked>
-                                            <label for="huey">Masculin</label>
+                                            <label for="masculin">Masculin</label>
                                         </div>
 
                                         <div>
                                             <input type="radio" id="feminin" name="gender" value="feminin">
-                                            <label for="dewey">Féminin</label>
+                                            <label for="feminin">Féminin</label>
                                         </div>
 
                                         <div>
                                             <input type="radio" id="autre" name="gender" value="autre">
-                                            <label for="louie">Autre</label>
+                                            <label for="autre">Autre</label>
                                         </div>
                                     </fieldset>
+                                </div>
+                                <div class="col-sm-4">
+
+                                    <fieldset>
+                                        <label>Pouvoir</label>
+                                        @foreach ($skills as $skill)
+                                        <div>
+                                            <input type="checkbox" id="skill_name" name="skills[]" value="{{ $skill->id }}">
+                                            <label for="{{ $skill->name }}">{{ $skill->name }}</label>
+                                        </div>
+                                    @endforeach
+                                    </fieldset>
+                                </div>
                                 </div>
 
                             </div>

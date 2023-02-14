@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Skills;
+use App\Models\Hero;
 use Illuminate\Http\Request;
 
 class SkillController extends Controller

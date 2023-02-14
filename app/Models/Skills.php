@@ -9,4 +9,9 @@ class Skills extends Model
 {
     use HasFactory;
     protected $fillable = ['name'];
+
+    public function heroes()
+{
+    return $this->belongsToMany('App\Hero');
+}
 }

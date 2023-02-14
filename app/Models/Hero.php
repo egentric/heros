@@ -9,4 +9,9 @@ class Hero extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'gender', 'race', 'description'];
+
+    public function skills()
+    {
+        return $this->belongsToMany('App\Models\Skills');
+    }
 }
