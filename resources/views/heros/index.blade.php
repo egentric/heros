@@ -34,7 +34,13 @@
                                     <td>{{$hero->gender}}</td>
                                     <td>{{$hero->race}}</td>
                                     <td>{{$hero->description}}</td>
-                                    <td>{{--{{$hero->skills->name}}--}}</td>
+                                    <td>
+                                        <ul>
+                                            @foreach($hero->skills as $skill)
+                                            <li>{{ $skill->name }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </td>
                                     {{--@dump($hero->skills[0])--}}
                                     {{--SELECT * FROM `heroes`INNER JOIN hero_skills ON heroes.id=hero_skills.hero_id INNER JOIN skills ON skills.id=hero_skills.skills_id;--}}
                                     <td>

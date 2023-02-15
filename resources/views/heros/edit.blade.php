@@ -90,9 +90,9 @@ $hero->race }}">
                                 <div class="col-sm-4">
                                         <fieldset>
                                         <label>Pouvoir</label>
-                                        @foreach ($skills as $skill)
+                                        @foreach ($skills as $key=>$skill)
                                         <div>
-                                          <input type="checkbox" id="skill_name" name="skills[]" value="{{ $skill->id }}"  {{ $skill->id == $skill->id ? 'checked' : '' }}>
+                                          <input type="checkbox" id="skill_name" name="skills[]" value="{{ $skill->id }}"  {{ isset($hero->skills[$key]->id) ? 'checked' : '' }}>
                                           <label for="{{ $skill->name }}">{{ $skill->name }}</label>
                                         </div>
                                     @endforeach

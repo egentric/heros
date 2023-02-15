@@ -102,8 +102,10 @@ class HerosController extends Controller
             'race' => 'required',
             'description' => 'required',
         ]);
-//dd($request);
+
         Hero::whereId($id)->update($updateHero);
+       Hero::findOrFail($id)->skills()->sync($request->skills);
+
         return redirect()->route('heros.index')
             ->with('success', 'Le héro a été mis à jour avec succès !');
     }
